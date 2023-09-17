@@ -1,0 +1,55 @@
+paths:
+  /api/carts/{cid}:
+    get:
+      summary: Obtiene el carrito con sus productos
+      tags: 
+        - CartModel
+      parameters:
+      - name: cid
+        in: path
+        required: true
+        description: id del carrito que se desea obtener
+        schema:
+          $type: Object
+      responses:
+        "200":
+          description: El carrito y sus productos fueron obtenidos satisfactoriamente de la base de datos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#components/schemas/Cart'
+        "500":
+          description: Error interno del servidor, usualmente generado por una query defectuosa o por un fallo de conexión de la base de datos
+components:
+  schemas:
+    Cart:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: Id autogenerado por Mongo
+        products: 
+          type: Array
+          description: Contiene los productos del carrito
+      example:
+        _id: ObjectId('64c5e427c90189f1ee594168')
+        products: 
+          product: ObjectId('64580174434706cc69699c04')
+          quantity: 2      
+  requestBodies:
+    updateCart:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: Id autogenerado por Mongo
+        products: 
+          type: Array
+          description: Contiene los productos del carrito
+      example:
+        _id: ObjectId('64c5e427c90189f1ee594168')
+        products: 
+          product: ObjectId('64580174434706cc69699c04')
+          quantity: 3

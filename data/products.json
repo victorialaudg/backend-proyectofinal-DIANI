@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "title": "Mundial",
+    "description": "Un blend internacional.",
+    "price": 3000,
+    "thumbnails": [
+      "https://www.modobarista.com/product_images/s/488/mundial__41468_thumb.png"
+    ],
+    "status": true,
+    "code": "EP001",
+    "stock": 4,
+    "category": "cafe"
+  },
+  {
+    "id": 2,
+    "title": "Colombia",
+    "description": "Auténtico café colombiano",
+    "price": 5500,
+    "thumbnails": [
+      "https://www.modobarista.com/product_images/a/376/3__78745_zoom.png"
+    ],
+    "status": true,
+    "code": "EP002",
+    "stock": 10,
+    "category": "cafe"
+  },
+  {
+    "id": 3,
+    "title": "Perú",
+    "description": "Suave café peruano",
+    "price": 250,
+    "thumbnails": [
+      "https://www.fullescabio.com/productos/1600386131328/01_1600818527.webp?v=2215621"
+    ],
+    "status": true,
+    "code": "EP003",
+    "stock": 5,
+    "category": "cafe"
+  },
+  {
+    "id": 4,
+    "title": "Catuai",
+    "description": "Un café muy especial.",
+    "price": 2270,
+    "thumbnails": [
+      "https://www.modobarista.com/product_images/l/093/Catuai__98631_zoom.png"
+    ],
+    "status": true,
+    "code": "EP004",
+    "stock": 195,
+    "category": "cafe"
+  },
+  {
+    "id": 5,
+    "title": "Brasil",
+    "description": "El café ideal para tu descanso",
+    "price": 2725,
+    "thumbnails": [
+      "https://www.modobarista.com/product_images/y/935/1__22835_thumb.png"
+    ],
+    "status": true,
+    "code": "EP005",
+    "stock": 12,
+    "category": "cafe"
+  },
+  {
+    "id": 6,
+    "title": "ModoBarista",
+    "description": "No te lo puedes perder.",
+    "price": 1100,
+    "thumbnails": [
+      "https://www.modobarista.com/product_images/w/382/te_-_esto_todavia_no_se_lanzo_con_este_packaging__90783_thumb.jpg"
+    ],
+    "status": true,
+    "code": "EP006",
+    "stock": 11,
+    "category": "te"
+  },
+  {
+    "id": 7,
+    "title": "MintCitrus",
+    "description": "Un té cítrico ideal para tus veranos.",
+    "price": 1900,
+    "thumbnails": [
+      "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FMint%20Citrus%20425x425%20sin%20fondo.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop"
+    ],
+    "status": true,
+    "code": "EP007",
+    "stock": 32,
+    "category": "te"
+  },
+  {
+    "id": 8,
+    "title": "Earl Grey",
+    "description": "El té más clásico.",
+    "price": 1250,
+    "thumbnails": [
+      "https://www.fullescabio.com/productos/1600386131302/01_1600813029.webp?v=2215621"
+    ],
+    "status": true,
+    "code": "EP008",
+    "stock": 11,
+    "category": "te"
+  },
+  {
+    "id": 9,
+    "title": "Latte",
+    "description": "Tu latte ideal de cada mañana.",
+    "price": 43,
+    "thumbnails": [
+      "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-02%2FLatte%20425x425%20verde_1.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop"
+    ],
+    "status": true,
+    "code": "EP009",
+    "stock": 10,
+    "category": "cafe"
+  },
+  {
+    "id": 10,
+    "title": "Skynny",
+    "description": "Una sorpresa por descrubrir.",
+    "price": 523,
+    "thumbnails": [
+      "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-02%2FLatte%20425x425%20verde_1.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop"
+    ],
+    "status": true,
+    "code": "EP010",
+    "stock": 50,
+    "category": "cafe"
+  }
+]

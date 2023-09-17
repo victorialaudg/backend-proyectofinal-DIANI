@@ -1,0 +1,32 @@
+<h1>Users</h1>
+<h2>You: {{user.first_name}} (<a href="/profile">{{user.email}}</a>) - role: {{user.role}} [<a href="/carts/{{user.cart}}">My Cart</a>] [<a href="/api/sessions/logout">Logout</a>]</h2>
+<hr />
+<hr />
+
+<button id="deleteBtn" class="btn btn-primary">Borrar usuarios inactivos</button>
+<hr />
+<table id="realUsersTable" class="table table-striped">
+    <thead>
+        <tr>
+            <td></td>
+            <td><strong>Nombre</strong></td>
+            <td><strong>Apellido</strong></td>
+            <td><strong>E-mail</strong></td>
+            <td><strong>Rol</strong></td>
+        </tr>
+    </thead>
+    <tbody>
+    {{#each products}}
+        <tr>
+            <td><button class="btn btn-danger" onclick="deleteUser('{{this._id}}')">Eliminar</button></td>
+            <td>{{this.first_name}}</td>
+            <td>{{this.last_name}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.role}}</td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
