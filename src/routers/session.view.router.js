@@ -2,6 +2,8 @@ import { Router } from 'express'
 import { privateRoutes, publicRoutes } from '../middlewares/auth.middleware.js'
 import UserDTO from '../dto/user.dto.js'
 import logger from './../logger.js'
+import { UserService } from '../repositories/index.js';
+import { getAllUsersController } from '../controllers/user.controller.js';
 
 const router = Router()
 
@@ -53,5 +55,17 @@ router.get('/loggerTest', (req, res) => {
     logger.fatal('Mensaje de error fatal');
     res.json({ status: 'success', message: 'Pruebas ejecutadas exitosamente' })
 })
+
+router.get('/users', async (req, res) => {
+    try {
+        let result = await UserService.getAll()
+        res.status(201).json({status: 'success', payload: result})
+    }
+    catch(err) {
+        res.json({ status: 'error', error: 'No se pueden cargar los usuarios'})
+    } 
+})
+
+
 
 export default router

@@ -1,5 +1,7 @@
+import nodemailer from 'nodemailer';
 import { ProductService } from '../repositories/index.js'
 import { PORT } from '../app.js'
+import router from '../routers/session.router.js';
 
 export const getAllProductsController = async (req, res) => {
     //const result = await ProductService.getAll()
@@ -69,10 +71,37 @@ export const deleteProductController = async (req, res) => {
         if (result === null) {
             return res.status(404).json({ status: 'error', error: 'Not found' })
         }
+
+        //Envía mail indicando que sae borró un producto
+        const transport = nodemailer.createTransport({
+            service:'gmail',
+            port:587,
+            auth:{
+                user:'victorialau.dg@gmail.com',
+                pass:'tdxiluhgbtlnjtps'
+            }
+        })
+        router.get('/mail', async(req,res)=>{
+            let result = await transport.sendMail({
+                from: 'victorialau.dg@gmail.com',
+                to: 'lauravictoria3229@gmail.com',
+                subject:'Producto eliminado',
+                html:`
+                <div>
+                    <h1>Producto eliminado</h1>
+                    <p>Se ha eliminado tu producto premium.</p>
+                </div>`,
+                attachments:[]
+            })
+            res.send({status:"success",result:"Email Sent"})
+        })
+        //Fin mail
+
         const products = await ProductService.getAll()
         req.io.emit('updatedProducts', products)
         res.status(200).json({ status: 'success', payload: products })
     } catch(err) {
         res.status(500).json({ status: 'error', error: err.message })
     }
+        
 }

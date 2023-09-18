@@ -50,7 +50,7 @@ export const viewProductsFromCartController = async(req, res) => {
         res.status(result.statusCode).json({ status: 'error', error: result.response.error })
     }
 }
-//Added
+//Users
 export const viewAllUsersController = async(req, res) => {
      // const result = await getUsers(req, res)
      const result = await UserService.getAllPaginate(req, PORT)
@@ -59,5 +59,4 @@ export const viewAllUsersController = async(req, res) => {
      } else {
          res.status(result.statusCode).json({ status: 'error', error: result.response.error })
      }
-    //res.render('Bienvenida a users');
 }

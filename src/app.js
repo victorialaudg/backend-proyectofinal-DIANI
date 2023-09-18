@@ -61,6 +61,8 @@ app.engine('handlebars', handlebars.engine())
 app.set('views', './src/views')
 app.set('view engine', 'handlebars')
 
+
+
 /*app.all('*', (req,res,next) => {
     const err = new Error(`No se pudo encontrar ${req.originalUrl} en el servidor`)
     err.status = 'fail'
@@ -80,13 +82,13 @@ const transport = nodemailer.createTransport({
 
 app.get('/mail', async(req,res)=>{
     let result = await transport.sendMail({
-        from: 'Coder Tests victorialau.dg@gmail.com',
+        from: 'victorialau.dg@gmail.com',
         to: 'lauravictoria3229@gmail.com',
         subject:'Correo de prueba',
         html:`
         <div>
             <h1>Esto es un test</h1>
-            <p>Un test muy lindo</p>
+            <p>Un test de prueba</p>
         </div>`,
         attachments:[]
     })

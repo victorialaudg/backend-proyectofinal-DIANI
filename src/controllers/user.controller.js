@@ -4,7 +4,7 @@ import { PORT } from '../app.js'
 import shortid from "shortid"
 
 export const getAllUsersController = async (req, res) => {
-   // const result = await userModel.getAll()
+    //const result = await userModel.getAll()
     const result = await UserService.getAllPaginate(req, PORT)
     res.status(result.statusCode).json(result.response)
 }

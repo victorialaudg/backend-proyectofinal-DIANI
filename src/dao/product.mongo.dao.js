@@ -5,7 +5,7 @@ export default class ProductMongoDAO {
     getById = async(id) => await productModel.findById(id).lean().exec()
     getAllPaginate = async(req, PORT) => {
         try {
-            const limit = req.query.limit || 10
+            const limit = req.query.limit || 12
             const page = req.query.page || 1
             const filterOptions = {}
             if (req.query.stock) filterOptions.stock = req.query.stock

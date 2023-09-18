@@ -1,11 +1,13 @@
 import { Router } from 'express'
 import passport from "passport";
-import nodemailer from 'nodemailer'
+import nodemailer from 'nodemailer';
 import config from '../config/config.js';
 import UserModel from '../models/user.model.js'
 import UserPasswordModel from '../models/user-password.model.js'
 import { generateRandomString, createHash } from '../utils.js';
 import { PORT } from '../app.js'
+import { UserService } from '../repositories/index.js';
+
 
 const router = Router()
 
@@ -99,13 +101,19 @@ router.post('/reset-password/:user', async (req, res) => {
 })
 
 router.get('/premium/:uid', async (req, res) => {
-    try {
-        const user = await UserModel.findById(req.params.uid)
-        await UserModel.findByIdAndUpdate(req.params.uid, {role: user.role === 'user' ? 'premium' : 'user'})
-        res.json({ status: 'success', message: 'Se ha actualizado el rol del usuario' })
-    } catch(err) {
-        res.json({ status: 'error', error: err.message})
-    }
+    const user = await UserModel.findById(req.params.uid)
+        try {
+            if(user.role != 'admin'){
+                await UserModel.findByIdAndUpdate(req.params.uid, {role: user.role === 'user' ? 'premium' : 'user'})
+                res.json({ status: 'success', message: 'Se ha actualizado el rol del usuario' })
+            }
+            else{
+                res.json({ status: 'error', message: 'Eres admin y no puedes cambiar tu rol de usuario' })
+            }
+        }
+        catch(err) {
+            res.json({ status: 'error', error: err.message})
+        }
 })
 
 export default router
