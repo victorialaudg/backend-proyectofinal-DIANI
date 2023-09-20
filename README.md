@@ -11,7 +11,10 @@ Creación de un e-commerce
 Usuario admin para test: adminCoder@coder.com / pass: adminCod3r123
 Usuario premium para test: testpremium@mail.com / pass: 7777
 
-El usuario admin tiene permisos para eliminar cualquier producto pero no para crearlo desde /products/realTimeProducts
+El usuario admin tiene permisos para eliminar cualquier producto pero no para crearlo desde /products/realTimeProducts.
+
 El usuario Premium puede crear productos desde /products/realTimeProducts (una vez logueado) pero no puede eliminar productos que no hayan sido creados por él mismo.
-El usuario premium logueado como tal, desde /api/sessions/premium/:pid (id de su usuario premium) actualizará su rol a user, actualizándose también en la Base de datos. Si sevuelve a ejecutar volverá a ser "premium".
+
+El usuario premium logueado como tal, desde /api/sessions/premium/:pid (id de su usuario premium) actualizará su rol a user, actualizándose también en la Base de datos. Si se vuelve a ejecutar volverá a ser "premium".
+
 El usuario admin no tiene permisos para actualizar su rol.
