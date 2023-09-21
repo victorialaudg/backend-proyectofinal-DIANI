@@ -9,7 +9,10 @@ Creación de un e-commerce
 7) Al tocar en "Purchase" se redirige a /api/carts/:cid/purchase donde aparece el ticket de compra. Con esto se vacía el carrito.
 
 Usuario admin para test: adminCoder@coder.com / pass: adminCod3r123
+
+
 Usuario premium para test: testpremium@mail.com / pass: 7777
+
 
 El usuario admin tiene permisos para eliminar cualquier producto pero no para crearlo desde /products/realTimeProducts.
 
